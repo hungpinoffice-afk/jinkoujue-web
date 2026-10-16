@@ -1,0 +1,14 @@
+<svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 64 64" width="64" height="64">
+  <defs>
+    <linearGradient id="g" x1="0" y1="0" x2="0" y2="1">
+      <stop offset="0" stop-color="#E5C158"/>
+      <stop offset="1" stop-color="#B8912A"/>
+    </linearGradient>
+  </defs>
+  <rect width="64" height="64" rx="8" fill="#121417"/>
+  <rect x="3.5" y="3.5" width="57" height="57" rx="6" fill="none" stroke="url(#g)" stroke-width="1.6"/>
+  <rect x="9" y="9" width="46" height="46" rx="4" fill="#B33A2B"/>
+  <rect x="9" y="9" width="46" height="46" rx="4" fill="none" stroke="#7E2A1E" stroke-width="1"/>
+  <text x="32" y="43" text-anchor="middle" font-family="Songti SC, SimSun, serif"
+        font-size="34" fill="#F2E7D8">知</text>
+</svg>
