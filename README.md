@@ -1,47 +1,45 @@
-知微金口诀断课分析程序 — 網頁版（Web）
-==========================================
+# 知微金口诀断课分析程序 — 網頁版
 
-【線上網址】
-https://jinkoujue-divination.app.workbuddy.host/
+金口诀排盘、断课分析工具（公曆／農曆／干支輸入、月將晝夜、神煞、課鈐解讀、占斷結論、AI 斷課、五種格式導出）。
+手機、平板、電腦打開網址即可使用，不需安裝。
 
-手機、平板、電腦直接開這個網址就能用，不需要安裝任何東西。
-把網址傳給別人，對方在手機上打開即可使用。
+## 線上網址
 
+| 平台 | 網址 |
+|---|---|
+| GitHub Pages | https://hungpinoffice-afk.github.io/jinkoujue-web/ |
+| WorkBuddy | https://jinkoujue-divination.app.workbuddy.host/ |
 
-【這個資料夾是什麼】
-這是可以直接放到任何網頁空間的「靜態網站」，內容物：
+## 檔案說明
 
-  index.html          網頁入口（一定要有）
-  assets/             程式碼（JavaScript）
-  keqian.json.gz      課鈐解讀資料（1416 筆，必要檔案）
-  keqian.json         同上，未壓縮備援版（瀏覽器太舊時才會用到）
+| 檔案 | 用途 |
+|---|---|
+| `index.html` | 網頁入口 |
+| `assets/` | 程式碼（JavaScript） |
+| `keqian.json.gz` | 課鈐解讀資料（1416 筆，必要） |
+| `keqian.json` | 同上未壓縮備援版（舊瀏覽器才會用到） |
+| `使用說明.txt` | 使用說明 |
 
-※ index.html、assets、keqian.json.gz 三者必須放在同一層，不可拆散或改名。
+`index.html`、`assets`、`keqian.json.gz` 必須同層，不可拆散或改名。
 
+## 更新網站內容
 
-【功能說明】
-完整保留原程式所有功能：
-  - 公曆 / 農曆 / 干支 三種輸入排盤
-  - 月將、晝夜自動判定（可手動）
-  - 排盤、斷課分析、神煞、課鈐解讀、占斷結論
-  - AI 斷課（需自備 DeepSeek API Key，會存在瀏覽器本機）
-  - 案例存檔（存在瀏覽器本機）
-  - 導出 Markdown / HTML / Word / PDF / PowerPoint
+```bash
+cd C:\Users\win10\Desktop\金口訣
+git add -A
+git commit -m "更新說明"
+git push
+```
 
-手機版已自動調整版面（自適應表格、字級、可換行頁籤）。
+推送後 GitHub Pages 約 1 分鐘自動重新建置，網址不變。
 
+## 技術說明
 
-【和原版程式的差異（僅載入方式，內容一字未改）】
-1. 課鈐資料由 17MB 內嵌改為外部壓縮檔，首次載入量由約 17MB 降到約 2.1MB，
-   手機開啟速度大幅提升。
-2. 導出用的 Word / Excel / PPT 函式庫改為按下「導出」時才載入。
-3. 課鈐資料中的 rawAll 欄位原本是其他欄位的重複內容，
-   已驗證 1416 筆全部可逐字精確還原，故改為載入時即時組合。
-4. 新增手機 viewport 設定與載入中提示。
+- 純前端 React 19 + Vite 8，靜態網站，無後端。
+- 課鈐資料的 `rawAll` 欄位經逐筆驗證（1416 筆、0 筆不符）可由其他欄位精確還原，
+  故不重複儲存，改為執行時即時組合。
+- 資料改存 gzip 檔，啟動時以 `DecompressionStream('gzip')` 解壓，
+  首屏載入量由約 17MB 降至約 1.6MB。
+- 導出用的 xlsx / docx / pptxgenjs 改為按下「導出」時才動態載入。
 
-※ 原始程式檔案完全沒有被修改，原目錄保持原狀。
-
-
-【以後要改內容怎麼改】
-原始碼副本放在：C:\Users\win10\Desktop\金口訣_原始碼
-（詳見該資料夾內的「建置說明.txt」）
+原始桌面版專案未做任何修改。
