@@ -41,5 +41,7 @@ git push
 - 資料改存 gzip 檔，啟動時以 `DecompressionStream('gzip')` 解壓，
   首屏載入量由約 17MB 降至約 1.6MB。
 - 導出用的 xlsx / docx / pptxgenjs 改為按下「導出」時才動態載入。
+- 資料載入具容錯：`keqian.json.gz` 失敗會自動改用未壓縮的 `keqian.json`；
+  兩者都失敗時程式仍可正常排盤／斷課／神煞，只顯示提示橫幅（不會整頁卡死）。
 
 原始桌面版專案未做任何修改。
