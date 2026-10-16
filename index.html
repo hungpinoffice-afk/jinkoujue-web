@@ -8,14 +8,20 @@
     <meta name="mobile-web-app-capable" content="yes" />
     <meta name="description" content="知微金口诀断课分析程序 — 排盘、断课、神煞、课钤解读" />
     <title>知微金口诀断课分析程序</title>
-    <script type="module" crossorigin src="./assets/index-Dhheiiou.js"></script>
+    <script type="module" crossorigin src="./assets/index-CZaLtU7o.js"></script>
   </head>
   <body style="margin:0;background:#f5f0e6;">
     <div id="root">
       <div id="boot-loading" style="font-family:Noto Sans SC,Microsoft YaHei,sans-serif;padding:4rem 1.5rem;text-align:center;color:#b8860b">
         <div style="font-size:1.15rem;font-weight:700;letter-spacing:3px">知微金口诀断课分析程序</div>
-        <div style="font-size:0.82rem;color:#b0a898;margin-top:10px">資料載入中，請稍候…</div>
+        <div id="boot-hint" style="font-size:0.82rem;color:#b0a898;margin-top:10px">資料載入中，請稍候…</div>
       </div>
     </div>
+    <script>
+      setTimeout(function () {
+        var el = document.getElementById('boot-hint');
+        if (el) el.textContent = '資料量較大，仍在載入中…若超過 1 分鐘請檢查網路後重新整理。';
+      }, 10000);
+    </script>
   </body>
 </html>
