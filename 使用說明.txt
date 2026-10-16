@@ -1,40 +1,64 @@
-知微金口诀断课分析程序 — 網頁版（Web）
+知微金口诀断课分析程序 — 玄墨燙金版
 ==========================================
+兩種版本，任選一種用：
 
-【線上網址】（手機、平板、電腦直接打開，不需安裝）
+  A. 網頁版 → 把「網址」傳給別人，對方手機打開就能用（不需安裝）
+  B. 電腦版 → 一個 HTML 檔，雙擊就能開，完全不用網路
+
+
+【A. 網頁版】
   主要：https://hungpinoffice-afk.github.io/jinkoujue-web/
   備用：https://jinkoujue-divination.app.workbuddy.host/
 
-把網址傳給別人，對方在手機上打開即可使用。
+  把網址傳給別人，對方在手機（Android / iPhone）上打開即可使用。
+  手機版版面已自動調整，不需要左右滑動。
 
 
-【這個資料夾是什麼】
-這是可以直接放到任何網頁空間的「靜態網站」，內容物：
+【B. 電腦單檔離線版】
+  檔案：知微金口诀_單檔離線電腦版.html（約 5 MB）
+  位置：C:\Users\win10\Desktop\金口訣\
+        （桌面也放了一份方便點擊）
 
-  index.html          網頁入口（一定要有）
-  assets/             程式碼（JavaScript）
-  keqian.json.gz      課鈐解讀資料（1416 筆，必要檔案）
-  keqian.json         同上，未壓縮備援版（瀏覽器太舊時才會用到）
-  README.md           說明
-  .nojekyll           給 GitHub Pages 用（勿刪）
-
-※ index.html、assets、keqian.json.gz 三者必須放在同一層，不可拆散或改名。
+  用法：雙擊檔案 → 用 Chrome / Edge 開啟即可。
+  特性：
+    - 所有程式、資料、樣式都包在「這一個檔案」裡，可離線使用
+    - 可以複製到隨身碟、寄給別人，對方不用安裝、不用連網
+    - 首次開啟需解壓 1416 筆課鈐資料，約 1～2 秒
 
 
-【功能說明】
-完整保留原程式所有功能：
+【風格】
+  玄墨燙金：墨黑底 + 燙金線條 + 朱砂印章，標題用宋體。
+  （以手機「加入主畫面」後，開啟時的主題色也是墨黑）
+
+
+【功能說明】（完整保留原程式所有功能）
   - 公曆 / 農曆 / 干支 三種輸入排盤
   - 月將、晝夜自動判定（可手動）
   - 排盤、斷課分析、神煞、課鈐解讀、占斷結論
-  - AI 斷課（需自備 DeepSeek API Key，會存在瀏覽器本機）
+  - AI 斷課（需自備 DeepSeek API Key，存在瀏覽器本機）
   - 案例存檔（存在瀏覽器本機）
   - 導出 Markdown / HTML / Word / PDF / PowerPoint
 
-手機版已自動調整版面（自適應表格、字級、可換行頁籤）。
+  ※ 排盤結果已與桌面原版逐筆比對，完全一致。
+
+
+【這個資料夾是什麼】
+可以直接放到任何網頁空間的「靜態網站」：
+
+  index.html                          網頁入口（一定要有）
+  assets/                             程式碼（JavaScript）
+  keqian.json.gz                      課鈐解讀資料（1416 筆，必要）
+  keqian.json                         同上，未壓縮備援版（瀏覽器太舊時才用）
+  知微金口诀_單檔離線電腦版.html        電腦離線版（可單獨帶走）
+  README.md                           說明
+  使用說明.txt                         本檔
+  .nojekyll                           給 GitHub Pages 用（勿刪）
+
+※ index.html、assets、keqian.json.gz 三者必須同層，不可拆散或改名。
 
 
 【更新網站內容】
-這個資料夾已經和 GitHub 連線（GitHub Pages），改完檔案後執行：
+這個資料夾已和 GitHub 連線（GitHub Pages），改完檔案後執行：
 
   cd C:\Users\win10\Desktop\金口訣
   git add -A
@@ -42,20 +66,22 @@
   git push
 
 推送後約 1 分鐘 GitHub Pages 會自動重新建置，網址不變。
-GitHub 專案網址：https://github.com/hungpinoffice-afk/jinkoujue-web
+GitHub 專案：https://github.com/hungpinoffice-afk/jinkoujue-web
 
 
-【和原版程式的差異（僅載入方式，內容一字未改）】
+【和原版程式的差異（內容一字未改，僅載入方式與外觀）】
 1. 課鈐資料由 17MB 內嵌改為外部壓縮檔，首次載入量由約 17MB 降到約 1.6MB，
    手機開啟速度大幅提升。
 2. 導出用的 Word / Excel / PPT 函式庫改為按下「導出」時才載入。
 3. 課鈐資料中的 rawAll 欄位原本是其他欄位的重複內容，
    已驗證 1416 筆全部可逐字精確還原，故改為載入時即時組合。
-4. 新增手機 viewport 設定與載入中提示。
+4. 外觀改為「玄墨燙金」中國風（原本是淺色）。
+5. 資料載入具容錯：壓縮檔失敗會自動改用未壓縮版；兩者都失敗時，
+   排盤／斷課／神煞仍可正常使用，只顯示提示橫幅。
 
 ※ 原始程式檔案完全沒有被修改，原目錄保持原狀。
 
 
 【以後要改內容怎麼改】
-原始碼副本放在：C:\Users\win10\Desktop\金口訣_原始碼
+原始碼副本：C:\Users\win10\Desktop\金口訣_原始碼
 （詳見該資料夾內的「建置說明.txt」）

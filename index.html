@@ -3,24 +3,25 @@
   <head>
     <meta charset="UTF-8" />
     <meta name="viewport" content="width=device-width, initial-scale=1.0, viewport-fit=cover" />
-    <meta name="theme-color" content="#f5f0e6" />
+    <meta name="theme-color" content="#121417" />
     <meta name="apple-mobile-web-app-capable" content="yes" />
     <meta name="mobile-web-app-capable" content="yes" />
     <meta name="description" content="知微金口诀断课分析程序 — 排盘、断课、神煞、课钤解读" />
     <title>知微金口诀断课分析程序</title>
-    <script type="module" crossorigin src="./assets/index-CZaLtU7o.js"></script>
+    <script type="module" crossorigin src="./assets/index-CeT6midK.js"></script>
   </head>
-  <body style="margin:0;background:#f5f0e6;">
+  <body style="margin:0;background:#121417;">
     <div id="root">
-      <div id="boot-loading" style="font-family:Noto Sans SC,Microsoft YaHei,sans-serif;padding:4rem 1.5rem;text-align:center;color:#b8860b">
-        <div style="font-size:1.15rem;font-weight:700;letter-spacing:3px">知微金口诀断课分析程序</div>
-        <div id="boot-hint" style="font-size:0.82rem;color:#b0a898;margin-top:10px">資料載入中，請稍候…</div>
+      <div id="boot-loading" style="font-family:'Noto Serif TC',Songti TC,SimSun,serif;padding:4.5rem 1.5rem;text-align:center">
+        <div style="color:#C9A227;font-size:1.12rem;letter-spacing:.34em">知微金口诀</div>
+        <div style="color:#7C766A;font-size:0.7rem;letter-spacing:.4em;margin-top:8px">断课分析程序</div>
+        <div id="boot-hint" style="font-size:0.78rem;color:#5E5A52;margin-top:22px;letter-spacing:.1em">数据加载中，请稍候…</div>
       </div>
     </div>
     <script>
       setTimeout(function () {
         var el = document.getElementById('boot-hint');
-        if (el) el.textContent = '資料量較大，仍在載入中…若超過 1 分鐘請檢查網路後重新整理。';
+        if (el) el.textContent = '数据量较大，仍在加载中…若超过 1 分钟请检查网络后重新整理。';
       }, 10000);
     </script>
   </body>
